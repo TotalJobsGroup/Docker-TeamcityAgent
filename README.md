@@ -13,7 +13,7 @@ This repository is based off https://github.com/alonsodomin/docker-teamcity, plu
 The following command will start a TeamCity build agent:
 
 ```
-docker run -d --name teamcity-agent1 -e TEAMCITY_SERVER=http://teamcity.mydomain.com:8500 -e TEAMCITY_NAME=my-agent-name anotherchris/teamcityagent
+docker run -d --name teamcity-agent1 --privileged -e TEAMCITY_SERVER=http://teamcity.mydomain.com:8500 -e TEAMCITY_NAME=my-agent-name anotherchris/teamcityagent
 ```
 
 You should then authorise the agent on your Teamcity server.

@@ -33,12 +33,15 @@ RUN set -x \
 # AWS CLI (Using Python and PIP)
 #
 RUN apk add python py-pip
-#RUN curl "https://github.com/pypa/get-pip/raw/master/get-pip.py" -o "/tmp/get-pip.py" \
-#	&& python /tmp/get-pip.py 
-
 RUN pip install awscli
 RUN curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest \
 	&& chmod +x /usr/local/bin/ecs-cli
+
+# Add openrc so the docker daemon runs
+RUN apk add openrc && apk add iptables
+
+# Re-add Docker for the service registration
+RUN apk add docker
 
 #
 # Teamcity agent
