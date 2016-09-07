@@ -1,4 +1,4 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/anotherchris/teamcity-agent.svg?maxAge=2592000)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/anotherchris/teamcity-agent.svg?maxAge=2592000)](https://hub.docker.com/r/anotherchris/teamcity-agent/)
 
 # Supported tags
 
