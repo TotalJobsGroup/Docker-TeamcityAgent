@@ -1,4 +1,4 @@
-FROM docker
+FROM docker:1.11.2
 MAINTAINER Chris Small "chris.small@totaljobsgroup.com"
 
 #
@@ -66,4 +66,6 @@ RUN unzip -qq /tmp/buildAgent.zip -d $TEAMCITY_AGENT_HOME && \
 EXPOSE 9090
 VOLUME [ "/etc/teamcity-agent" ]
 WORKDIR /opt/lib/teamcity-agent
+
+RUN chmod 755 /docker-entrypoint.sh
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
